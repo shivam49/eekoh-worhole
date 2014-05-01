@@ -1,0 +1,11 @@
+{
+  "name": "navbar",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "templates": [
+    "template.html"
+  ]
+}
+

@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     path = require('path'),
+    sass = require('gulp-ruby-sass'),
     component = require('gulp-component'),
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload');
@@ -44,7 +45,8 @@ gulp.task('watch', function (test, test2, test32) {
   gulp.watch([
     'app/component.json',
     'app/component/**/**',
-    'app/component/**/**/**'
+    'app/component/**/**/**',
+    'app/component/**/**/**/**'
   ], [ 'component' ]);
 });
 

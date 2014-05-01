@@ -1,5 +1,5 @@
 {
   "name": "wormhole",
   "paths": [ "component" ],
-  "local": [ "boot" ]
+  "local": [ "app" ]
 }
