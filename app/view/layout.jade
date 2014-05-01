@@ -2,6 +2,9 @@ doctype html
 html(lang="en")
   head
     title eekoh
-    script(src='/build.js')
   body
+    include navbar
     != content
+    script(src='/build.js')
+    script.
+      require('boot');

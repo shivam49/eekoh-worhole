@@ -5,6 +5,12 @@ var fs = require('fs'),
 
 var port = process.env.PORT || 8000;
 var config = {
+      debug: {
+        request: [ 'error' ]
+      },
+      files: {
+        relativeTo: __dirname
+      }
     };
 
 // Create a server with a host and port
@@ -33,12 +39,12 @@ function loadControllers(callback) {
       return callback(err);
     }
 
-    files.forEach(function (controller) {
+    async.each(files, function (controller, cb) {
+      console.log('Loading Controller:', controller);
       var routes = require(path.join(controllers, controller));
       server.route(routes);
-    });
-
-    callback();
+      cb();
+    }, callback);
   });
 }
 

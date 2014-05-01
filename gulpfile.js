@@ -15,7 +15,8 @@ gulp.task('watch', function (test, test2, test32) {
   var lastFile;
 
   var hapi = nodemon({
-    script: 'index.js'
+    script: 'index.js',
+    run: false
   })
     .on('restart', function () {
       setTimeout(function () {
