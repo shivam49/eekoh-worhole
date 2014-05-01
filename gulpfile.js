@@ -1,13 +1,17 @@
 var gulp = require('gulp'),
     path = require('path'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('component-sass'),
     component = require('gulp-component'),
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload');
 
 gulp.task('component', function () {
   gulp.src(path.join(__dirname, 'app', 'component.json'))
-      .pipe(component()).pipe(gulp.dest('public'));
+      .pipe(component({
+        configure: function (builder) {
+          builder.use(sass);
+        }
+      })).pipe(gulp.dest('public'));
 });
 
 gulp.task('watch', function (test, test2, test32) {
@@ -31,23 +35,21 @@ gulp.task('watch', function (test, test2, test32) {
 
   gulp.watch([
     'index.js',
-    'app/**/*.js',
-    'app/view/*.jade'
+    'app/controller/*.js',
+    'app/component/**/**/*.js'
   ]).on('change', function (file) {
-    if (~file.path.indexOf('app/controller')) {
-      lastFile = file;
-      hapi.restart();
-    } else {
-      server.changed(file.path);
-    }
+    lastFile = file;
+    hapi.restart();
   });
 
   gulp.watch([
     'app/component.json',
-    'app/component/**/**',
-    'app/component/**/**/**',
-    'app/component/**/**/**/**'
-  ], [ 'component' ]);
+    'app/component/**/**/*.json',
+    'app/component/**/**/*.sass',
+    'app/view/*.jade'
+  ], [ 'component' ]).on('change', function (file) {
+    server.changed(file.path);
+  });
 });
 
 gulp.task('default', [ 'watch' ]);

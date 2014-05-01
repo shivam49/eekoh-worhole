@@ -1,6 +1,9 @@
 {
-  "name": "boot",
+  "name": "app",
   "main": "index.js",
+  "styles": [
+    "style.sass"
+  ],
   "scripts": [
     "index.js"
   ]
