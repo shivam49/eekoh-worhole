@@ -1,6 +1,13 @@
 var gulp = require('gulp'),
+    path = require('path'),
+    component = require('gulp-component'),
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload');
+
+gulp.task('component', function () {
+  gulp.src(path.join(__dirname, 'app', 'component.json'))
+      .pipe(component()).pipe(gulp.dest('public'));
+});
 
 gulp.task('watch', function (test, test2, test32) {
   var server = livereload();
@@ -12,7 +19,11 @@ gulp.task('watch', function (test, test2, test32) {
   })
     .on('restart', function () {
       setTimeout(function () {
-        server.changed(lastFile.path || null);
+        if (lastFile && lastFile.path) {
+          server.changed(lastFile.path || null);
+        } else {
+          server.changed();
+        }
       }, 1000);
     });
 
@@ -28,6 +39,12 @@ gulp.task('watch', function (test, test2, test32) {
       server.changed(file.path);
     }
   });
+
+  gulp.watch([
+    'app/component.json',
+    'app/component/**/**',
+    'app/component/**/**/**'
+  ], [ 'component' ]);
 });
 
 gulp.task('default', [ 'watch' ]);
