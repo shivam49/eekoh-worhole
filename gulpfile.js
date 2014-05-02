@@ -1,9 +1,13 @@
+'use strict';
+
 var gulp = require('gulp'),
     path = require('path'),
     sass = require('component-sass'),
     component = require('gulp-component'),
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload');
+
+sass.loadPath(path.join(__dirname, 'lib', 'sass'));
 
 gulp.task('component', function () {
   gulp.src(path.join(__dirname, 'app', 'component.json'))
