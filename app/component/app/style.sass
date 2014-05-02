@@ -1,2 +1,69 @@
+$bg-gray: #F8f8F8
+$bg-white: #FFFFFF
+
+/*      DOM     */
+html, body
+  padding: 0px  
+  margin: 0px
+
 html
-  background-color: yellow
+  background-color: $bg-gray
+
+/*      Columns */
+.col
+  display: inline-block
+  vertical-align: top
+  
+  &.col-left
+    width: 205px
+    padding-left: 27px
+
+/*      Navbar  */
+.navbar
+  background-color: $bg-white
+  height: 34px
+  padding: 8px 0 6px 0
+
+a.brand > img  
+  display: block
+  margin-top: 6px
+
+.navbar > .nav-search
+  display: inline-block
+
+/*      Forms   */
+/*      Inputs  */
+.input-group
+  box-sizing: border-box
+  position: relative
+  border-collapse: separate
+  display: table
+  border: 1px solid #ccc
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+
+  
+  &.input-xl
+    min-width: 600px
+  
+  &input
+    &[type=text]
+      display: inline-block
+    
+    &[type=submit]
+      display: inline-block
+
+input
+  &[type=text]
+    width: 100%
+    box-sizing: border-box
+    padding: 8px 12px
+    margin: 0px
+    border: 0
+    background: transparent
+
+
+    
+

@@ -1,4 +1,9 @@
-mixin test(column)
-  h3= column
+.navbar
+  .col.col-left
+    a(class='brand', href='vps.eekoh.me')
+      img(src="http://vps.eekoh.me/images/logo.png")
 
-h1 Navbar
+  .col
+    form(name="input", action="_self", method="get")
+      .input-group.input-xl    
+        input(type="text", name="search")
