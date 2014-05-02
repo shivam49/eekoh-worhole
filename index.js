@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require('fs'),
     path = require('path'),
     async = require('async'),
@@ -5,13 +7,13 @@ var fs = require('fs'),
 
 var port = process.env.PORT || 8000;
 var config = {
-      debug: {
-        request: [ 'error' ]
-      },
-      files: {
-        relativeTo: __dirname
-      }
-    };
+	debug: {
+		request: [ 'error' ]
+	},
+	files: {
+		relativeTo: __dirname
+	}
+};
 
 // Create a server with a host and port
 var server = new hapi.Server(port, config);
@@ -40,7 +42,6 @@ function loadControllers(callback) {
     }
 
     async.each(files, function (controller, cb) {
-      console.log('Loading Controller:', controller);
       var routes = require(path.join(controllers, controller));
       server.route(routes);
       cb();
@@ -56,5 +57,9 @@ async.series([
     throw new Error(err);
   }
 
-  server.start();
+  server.start(function () {
+		if (process.send) {
+			process.send('online');
+		}
+	});
 });

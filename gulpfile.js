@@ -1,49 +1,59 @@
 'use strict';
 
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     path = require('path'),
+    Spawner = require('./lib/spawner'),
     sass = require('component-sass'),
     component = require('gulp-component'),
-    nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload');
 
 sass.loadPath(path.join(__dirname, 'lib', 'sass'));
 
 gulp.task('component', function () {
   gulp.src(path.join(__dirname, 'app', 'component.json'))
-      .pipe(component({
-        configure: function (builder) {
-          builder.use(sass);
-        }
-      })).pipe(gulp.dest('public'));
+    .pipe(component({
+      configure: function (builder) {
+        builder.use(sass);
+      }
+    })).on('error', function (error) {
+      gutil.log(gutil.colors.red('[Error]'), 'SASS');
+      console.error(error);
+    })
+    .pipe(gulp.dest('public'));
 });
 
-gulp.task('watch', function (test, test2, test32) {
-  var server = livereload();
+gulp.task('watch', [ 'component' ], function () {
+  var server = livereload(),
+      child = new Spawner('./index'),
+      restarting = false,
+      files = [];
 
-  var lastFile;
+  child.on('online', function () {
+    var path = files.shift();
+    while (path) {
+      server.changed(path);
+      path = files.shift();
+    }
+    restarting = false;
+    gutil.log(gutil.colors.yellow('[HAPI]'), 'Restarted');
+  });
 
-  var hapi = nodemon({
-    script: 'index.js',
-    run: false
-  })
-    .on('restart', function () {
-      setTimeout(function () {
-        if (lastFile && lastFile.path) {
-          server.changed(lastFile.path || null);
-        } else {
-          server.changed();
-        }
-      }, 1000);
-    });
+  child.on('error', function () {
+    restarting = false;
+  });
 
   gulp.watch([
     'index.js',
     'app/controller/*.js',
     'app/component/**/**/*.js'
   ]).on('change', function (file) {
-    lastFile = file;
-    hapi.restart();
+    gutil.log(gutil.colors.blue('[Watch]'), file.path);
+    files.push(file.path);
+    if (! restarting) {
+      restarting = true;
+      child.restart();
+    }
   });
 
   gulp.watch([
@@ -52,6 +62,7 @@ gulp.task('watch', function (test, test2, test32) {
     'app/component/**/**/*.sass',
     'app/view/*.jade'
   ], [ 'component' ]).on('change', function (file) {
+    gutil.log(gutil.colors.blue('[Watch]'), file.path);
     server.changed(file.path);
   });
 });
