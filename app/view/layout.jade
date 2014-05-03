@@ -2,9 +2,13 @@ doctype html
 html(lang="en")
   head
     title eekoh
+
     link(rel='stylesheet', type='text/css', href='/build.css')
+
+    block head
   body
-    != content
+    block content
+
     script(src='/build.js')
     script.
-      require('boot');
+      require('app');

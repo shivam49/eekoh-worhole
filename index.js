@@ -7,12 +7,12 @@ var fs = require('fs'),
 
 var port = process.env.PORT || 8000;
 var config = {
-	debug: {
-		request: [ 'error' ]
-	},
-	files: {
-		relativeTo: __dirname
-	}
+  debug: {
+    request: [ 'error' ]
+  },
+  files: {
+    relativeTo: __dirname
+  }
 };
 
 // Create a server with a host and port
@@ -23,7 +23,10 @@ server.views({
     jade: 'jade'
   },
   path: path.join(__dirname, 'app', 'view'),
-  layout: true,
+  compileOptions: {
+    basedir: path.join(__dirname, 'app', 'component'),
+    pretty: true
+  },
   isCached: false
 });
 
@@ -58,8 +61,8 @@ async.series([
   }
 
   server.start(function () {
-		if (process.send) {
-			process.send('online');
-		}
-	});
+    if (process.send) {
+      process.send('online');
+    }
+  });
 });
