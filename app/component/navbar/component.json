@@ -1,8 +1,12 @@
 {
   "name": "navbar",
-  "dependencies": {
-    "components/jquery": "*"
-  },
+	"version": "0.0.1",
+	"paths": [
+		"../vendor"
+	],
+  "local": [
+    "jquery"
+  ],
   "main": "index.js",
   "scripts": [
     "index.js"
