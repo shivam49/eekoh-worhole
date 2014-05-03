@@ -2,6 +2,7 @@
   "name": "app",
   "main": "index.js",
   "styles": [
+    "reset.sass",
     "style.sass"
   ],
   "scripts": [
