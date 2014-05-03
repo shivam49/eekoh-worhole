@@ -18,6 +18,14 @@ var config = {
 // Create a server with a host and port
 var server = new hapi.Server(port, config);
 
+var plugins = path.join(__dirname, 'app', 'plugin');
+
+server.pack.require(path.join(plugins, 'development'), function (err) {
+  if (err) {
+    console.error('Failed loading plugin: util');
+  }
+});
+
 server.views({
   engines: {
     jade: 'jade'
