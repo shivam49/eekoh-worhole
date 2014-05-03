@@ -1,5 +1,8 @@
 {
   "name": "app",
+  "local": [
+    "navbar"
+  ],
   "main": "index.js",
   "styles": [
     "reset.sass",

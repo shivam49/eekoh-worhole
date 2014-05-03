@@ -8,14 +8,17 @@ var gulp = require('gulp'),
     component = require('gulp-component'),
     livereload = require('gulp-livereload');
 
-sass.loadPath(path.join(__dirname, 'lib', 'sass'));
+sass.loadPath([
+	path.join(__dirname, 'lib', 'sass'),
+]);
 
 gulp.task('component', function () {
   gulp.src(path.join(__dirname, 'app', 'component.json'))
     .pipe(component({
       configure: function (builder) {
         builder.use(sass);
-      }
+      },
+      out: path.join(__dirname, 'public', 'assets')
     })).on('error', function (error) {
       gutil.log(gutil.colors.red('[Error]'), 'SASS');
       console.error(error);
@@ -46,7 +49,8 @@ gulp.task('watch', [ 'component' ], function () {
   gulp.watch([
     'index.js',
     'app/controller/*.js',
-    'app/component/**/**/*.js'
+    'app/component/**/**/*.js',
+    'app/plugin/**/*.js'
   ]).on('change', function (file) {
     gutil.log(gutil.colors.blue('[Watch]'), file.path);
     files.push(file.path);
@@ -60,6 +64,7 @@ gulp.task('watch', [ 'component' ], function () {
     'app/component.json',
     'app/component/**/**/*.json',
     'app/component/**/**/*.sass',
+    'app/component/**/**/*.jade',
     'app/view/*.jade'
   ], [ 'component' ]).on('change', function (file) {
     gutil.log(gutil.colors.blue('[Watch]'), file.path);

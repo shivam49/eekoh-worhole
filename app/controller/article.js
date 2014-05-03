@@ -1,3 +1,5 @@
+'use strict';
+
 // Add the route
 var list = {
   handler: function (request, reply) {

@@ -1,1 +1,1 @@
-console.log('yay');
+var navbar = require('navbar');

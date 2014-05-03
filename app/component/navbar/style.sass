@@ -1,0 +1,45 @@
+$grid-columns: 24
+$max-width: auto
+
+@import "bourbon/bourbon"
+@import "neat/neat"
+
+$bg-color: #ffffff
+
+.navbar
+  @include outer-container()
+  background-color: $bg-color
+  padding-top: em(11)
+
+  .logo
+    @include span-columns(4)
+    padding-left: em(38)
+    padding-top: em(9)
+    svg, img
+      max-width: 100%
+
+  form
+    @include span-columns(12)
+    padding-top: em(6)
+
+    input
+      @include fill-parent()
+      border: 1px solid #b6b6b7
+      float: left
+      height: em(36.4 + 14)
+      padding: em(10) em(42) em(14) em(20)
+    button
+      background: none
+      border: none
+      float: right
+      height: em(36.4 + 14)
+      margin-left: em(-70.1)
+
+  ul
+    @include span-columns(8)
+    display: inline
+    list-style-type: none
+    padding-right: em(29)
+    text-align: right
+    li
+      display: inline

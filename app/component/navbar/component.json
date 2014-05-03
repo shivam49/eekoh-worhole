@@ -1,8 +1,23 @@
 {
   "name": "navbar",
+  "dependencies": {
+    "components/jquery": "*"
+  },
   "main": "index.js",
   "scripts": [
     "index.js"
-  ]
+  ],
+	"styles": [
+		"style.sass"
+	],
+	"images": [
+		"logo.svg",
+		"search.svg",
+		"tree.svg",
+		"messages.svg",
+		"notifications.svg",
+		"deals.svg",
+		"settings.svg"
+	]
 }
 
