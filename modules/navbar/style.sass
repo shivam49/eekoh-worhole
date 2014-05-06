@@ -1,45 +1,107 @@
-$grid-columns: 24
-$max-width: auto
-
 @import "bourbon/bourbon"
 @import "neat/neat"
 
+$grid-columns: 24
+$max-width: auto
 $bg-color: #ffffff
 
+/* Navbar */
 .navbar
-  @include outer-container()
   background-color: $bg-color
-  padding-top: em(11)
+  height: 50px
+  position: fixed
+  width: 100%
+
+  .brand-wrap
+    width: 204px
+    height: 40px
+    position: fixed
+    margin: 5px
+    padding: 5px 5px 0px 30px
+
+  .search-wrap
+    position: fixed
+    height: 40px
+    bottom: 0
+    left: 0
+    right: 0
+    top: 0
+    margin: 5px 250px 5px 214px
+
+    .form-wrap
+      @include outer-container
+
+  .spacer
+    @include span-columns(6)
+    height: 40px
+
+  .tree-wrap, .pipe
+    @include span-columns(1)
+    height: 40px
+    background: #FFF
+  
+  .pipe
+    border-right: 1px solid #C8C8C8
+   
+  .action-wrap
+    width: 240px
+    position: fixed
+    margin: 5px
+    height: 40px
+    right: 0
+
+    .action-container
+      @include outer-container
+      
+      .action-field
+        @include span-columns(6)
+        height: 40px
+        background-repeat: no-repeat
+        background-position: center center
+
+      .messages
+        @extend .action-field
+        background-image: url(/assets/navbar/messages.svg)
+
+      .notifications
+        @extend .action-field
+        background-image: url(/assets/navbar/notifications.svg)
+
+      .deals
+        @extend .action-field
+        background-image: url(/assets/navbar/deals.svg)
+
+      .settings
+        @extend .action-field
+        background-image: url(/assets/navbar/settings.svg)
 
   .logo
-    @include span-columns(4)
-    padding-left: em(38)
-    padding-top: em(9)
-    svg, img
-      max-width: 100%
+    width: 100%
 
   form
-    @include span-columns(12)
-    padding-top: em(6)
+    @include span-columns(16)
 
     input
       @include fill-parent()
       border: 1px solid #b6b6b7
       float: left
-      height: em(36.4 + 14)
-      padding: em(10) em(42) em(14) em(20)
+      border-radius: 0px
+      font-weight: normal
+    
     button
       background: none
       border: none
       float: right
-      height: em(36.4 + 14)
       margin-left: em(-70.1)
+      padding: .5em
 
-  ul
-    @include span-columns(8)
-    display: inline
-    list-style-type: none
-    padding-right: em(29)
-    text-align: right
-    li
-      display: inline
+  button, button:hover:not(:disabled), input[type="submit"]:hover:not(:disabled), button:focus:not(:disabled)
+    box-shadow: inset 0 0 0 0 transparent !important
+    box-shadow: 0 0 0 0 transparent !important
+    border: 0 transparent
+    background-color: transparent
+    background-image: none
+    text-shadow: none
+    outline: none
+    outline-color: transparent
+    outline-sytle: none
