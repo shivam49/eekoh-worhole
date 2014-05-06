@@ -13,7 +13,7 @@ sass.loadPath([
 ]);
 
 gulp.task('component', function () {
-  gulp.src(path.join(__dirname, 'app', 'component.json'))
+  gulp.src(path.join(__dirname, 'component.json'))
     .pipe(component({
       configure: function (builder) {
         builder.use(sass);
@@ -49,7 +49,7 @@ gulp.task('watch', [ 'component' ], function () {
   gulp.watch([
     'index.js',
     'app/controller/*.js',
-    'app/component/**/**/*.js',
+    'modules/**/**/*.js',
     'app/plugin/**/*.js'
   ]).on('change', function (file) {
     gutil.log(gutil.colors.blue('[Watch]'), file.path);
@@ -61,10 +61,10 @@ gulp.task('watch', [ 'component' ], function () {
   });
 
   gulp.watch([
-    'app/component.json',
-    'app/component/**/**/*.json',
-    'app/component/**/**/*.sass',
-    'app/component/**/**/*.jade',
+    'component.json',
+    'modules/**/**/*.json',
+    'modules/**/**/*.sass',
+    'modules/**/**/*.jade',
     'app/view/*.jade'
   ], [ 'component' ]).on('change', function (file) {
     gutil.log(gutil.colors.blue('[Watch]'), file.path);
