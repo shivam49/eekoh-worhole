@@ -48,9 +48,9 @@ gulp.task('watch', [ 'component' ], function () {
 
   gulp.watch([
     'index.js',
-    'app/controller/*.js',
+    'app/controllers/*.js',
     'modules/**/**/*.js',
-    'app/plugin/**/*.js'
+    'app/plugins/**/*.js'
   ]).on('change', function (file) {
     gutil.log(gutil.colors.blue('[Watch]'), file.path);
     files.push(file.path);
@@ -65,7 +65,7 @@ gulp.task('watch', [ 'component' ], function () {
     'modules/**/**/*.json',
     'modules/**/**/*.sass',
     'modules/**/**/*.jade',
-    'app/view/*.jade'
+    'app/views/*.jade'
   ], [ 'component' ]).on('change', function (file) {
     gutil.log(gutil.colors.blue('[Watch]'), file.path);
     server.changed(file.path);
