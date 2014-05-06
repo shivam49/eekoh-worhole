@@ -18,7 +18,7 @@ var config = {
 // Create a server with a host and port
 var server = new hapi.Server(port, config);
 
-var plugins = path.join(__dirname, 'app', 'plugin');
+var plugins = path.join(__dirname, 'app', 'plugins');
 
 server.pack.require(path.join(plugins, 'development'), function(err) {
   if (err) {
