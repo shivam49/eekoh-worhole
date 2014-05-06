@@ -20,7 +20,7 @@ var server = new hapi.Server(port, config);
 
 var plugins = path.join(__dirname, 'app', 'plugin');
 
-server.pack.require(path.join(plugins, 'development'), function (err) {
+server.pack.require(path.join(plugins, 'development'), function(err) {
   if (err) {
     console.error('Failed loading plugin: util');
   }
@@ -30,9 +30,9 @@ server.views({
   engines: {
     jade: 'jade'
   },
-  path: path.join(__dirname, 'app', 'view'),
+  path: path.join(__dirname, 'app', 'views'),
   compileOptions: {
-    basedir: path.join(__dirname, 'app', 'component'),
+    basedir: path.join(__dirname, 'modules'),
     pretty: true
   },
   isCached: false
@@ -43,18 +43,18 @@ function loadModels(callback) {
   callback();
 }
 
-// Load Controllers
-function loadControllers(callback) {
-  var controllers = path.join(__dirname, 'app', 'controller');
+// Load Routes
+function loadRoutes(callback) {
+    var routes = path.join(__dirname, 'app', 'routes');
 
-  fs.readdir(controllers, function (err, files) {
+  fs.readdir(routes, function(err, files) {
     if (err) {
       return callback(err);
     }
 
-    async.each(files, function (controller, cb) {
-      var routes = require(path.join(controllers, controller));
-      server.route(routes);
+    async.each(files, function(file, cb) {
+      var route = require(path.join(routes, file));
+      server.route(route);
       cb();
     }, callback);
   });
@@ -62,13 +62,13 @@ function loadControllers(callback) {
 
 async.series([
   loadModels,
-  loadControllers,
-], function (err) {
+  loadRoutes
+], function(err) {
   if (err) {
     throw new Error(err);
   }
 
-  server.start(function () {
+  server.start(function() {
     if (process.send) {
       process.send('online');
     }
