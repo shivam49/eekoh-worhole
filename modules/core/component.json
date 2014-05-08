@@ -1,7 +1,8 @@
 {
   "name": "app",
   "local": [
-    "navbar"
+    "navbar",
+    "sidebar"
   ],
   "main": "index.js",
   "styles": [
