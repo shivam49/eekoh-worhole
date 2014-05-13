@@ -49,7 +49,6 @@ gulp.task('watch', [ 'component' ], function () {
   gulp.watch([
     'index.js',
     'app/controllers/*.js',
-    'modules/**/**/*.js',
     'app/plugins/**/*.js'
   ]).on('change', function (file) {
     gutil.log(gutil.colors.blue('[Watch]'), file.path);
@@ -63,6 +62,7 @@ gulp.task('watch', [ 'component' ], function () {
   gulp.watch([
     'component.json',
     'modules/**/**/*.json',
+    'modules/**/**/*.js',
     'modules/**/**/*.sass',
     'modules/**/**/*.jade',
     'app/views/*.jade'
