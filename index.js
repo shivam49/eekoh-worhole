@@ -18,11 +18,13 @@ var config = {
 // Create a server with a host and port
 var server = new hapi.Server(port, config);
 
+// HAPI Plugin Path
 var plugins = path.join(__dirname, 'app', 'plugins');
 
+// Load Development Helper Plugin
 server.pack.require(path.join(plugins, 'development'), function(err) {
   if (err) {
-    console.error('Failed loading plugin: util');
+    console.error('Failed loading plugin: development');
   }
 });
 
@@ -45,7 +47,7 @@ function loadModels(callback) {
 
 // Load Routes
 function loadRoutes(callback) {
-    var routes = path.join(__dirname, 'app', 'routes');
+  var routes = path.join(__dirname, 'app', 'routes');
 
   fs.readdir(routes, function(err, files) {
     if (err) {
