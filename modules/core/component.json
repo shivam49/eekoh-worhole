@@ -2,7 +2,8 @@
   "name": "app",
   "local": [
     "navbar",
-    "sidebar"
+    "sidebar",
+    "masonry"
   ],
   "main": "index.js",
   "styles": [

@@ -1,2 +1,7 @@
-var navbar = require('navbar');
-var sidebar = require('sidebar');
+[
+  'navbar',
+  'sidebar',
+  'masonry'
+].forEach(function (module) {
+  require(module);
+});
