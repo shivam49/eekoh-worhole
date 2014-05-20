@@ -1,4 +1,5 @@
 [
+  'chatwindow',
   'navbar',
   'notifications',
   'sidebar',
