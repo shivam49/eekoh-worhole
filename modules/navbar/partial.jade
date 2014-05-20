@@ -19,7 +19,14 @@
 
 .submenu
   .submenu-holder
-    .dropdown Menu
+    .dropdown-menu Timeline
+      .dropdown-burger
+    .dropdown
+      a(href='#') Timeline
+      a(href='#') Trending
+      a(href='#') Streams
+      a(href='#') Lumberyard
+      
     .calendar
       a(href='/' class="active") 22 apr
       a(href='/') 22 apr
@@ -46,4 +53,8 @@ script(type='text/javascript').
 
   $('.action-container .deals').click(function() {
     $('.notifications-deals-holder').fadeToggle('fast');
+  });
+
+  $('.dropdown-menu').click(function() {
+    $('.dropdown').fadeToggle('fast');
   });

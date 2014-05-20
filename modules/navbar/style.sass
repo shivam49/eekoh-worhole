@@ -175,18 +175,48 @@ $bg-color: #ffffff
     position: relative
     height: 22px
   
-    .dropdown
-      width: 100px
+    .dropdown-menu
+      width: 140px
       height: 22px
       border-right: 3px solid #fff
-      margin-left: 217px
+      margin-left: 214px
       float: left
-      padding-left: 30px
+      padding-left: 15px
+      position: relative
+      line-height: 23px
+
+      .dropdown-burger
+        width: 12px
+        height: 7px
+        background: url(/assets/navbar/icon-mrburger.png)
+        position: absolute
+        top: 8px
+        right: 15px
+
+    .dropdown-menu:hover
+      cursor: pointer
+      
+    .dropdown
+      width: 137px
+      background: #000
+      position: absolute
+      top: 25px
+      left: 214px
+      opacity: 0.8
+      padding: 10px 15px
+      display: none
+      
+      a, a:link, a:visited, a:hover, a:active
+        color: #fff
+        font-size: 12px
+        display: block
+        margin-bottom: 3px
   
     .calendar
       margin-left: 30px
       margin-right: 244px
       float: left
+      line-height: 23px
     
       a 
         color: #929090
