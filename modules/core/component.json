@@ -2,6 +2,7 @@
   "name": "app",
   "local": [
     "navbar",
+    "notifications",
     "sidebar",
     "masonry"
   ],
