@@ -11,11 +11,11 @@
   .action-wrap
     .action-container
       .messages
-        .active 02
+        .active 13
       .notifications
-        .active 02
+        .active 21
       .deals
-        .active 02
+        .active 57
       .settings
 
 .submenu
@@ -38,4 +38,8 @@ script(type='text/javascript').
 
   $('.action-container .messages').click(function() {
     $('.notifications-messages-holder').fadeToggle('fast');
+  });
+
+  $('.action-container .notifications').click(function() {
+    $('.notifications-alerts-holder').fadeToggle('fast');
   });
