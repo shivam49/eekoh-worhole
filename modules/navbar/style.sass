@@ -11,13 +11,18 @@ $bg-color: #ffffff
   height: 50px
   position: fixed
   width: 100%
+  z-index: 100
 
   .brand-wrap
-    width: 204px
-    height: 40px
-    position: fixed
-    margin: 5px
-    padding: 5px 5px 0px 30px
+    width: 215px
+    height: 50px
+    position: absolute
+    background-image: url(/assets/navbar/logo.svg)
+    background-repeat: no-repeat
+    background-size: 100px auto
+    background-position: center center
+    top: 0px
+    left: 0px	
 
   .search-wrap
     position: fixed
@@ -30,53 +35,89 @@ $bg-color: #ffffff
 
     .form-wrap
       @include outer-container
-
-  .spacer
-    @include span-columns(6)
+      
+  .tree
+    background-image: url(/assets/navbar/tree.svg)
+    background-repeat: no-repeat
+    width: 40px
     height: 40px
+    position: absolute
+    right: 260px
+    top: 5px
 
-  .tree-wrap, .pipe
-    @include span-columns(1)
-    height: 40px
-    background: #FFF
-  
-  .pipe
-    border-right: 1px solid #C8C8C8
-   
   .action-wrap
-    width: 240px
+    height: 38px
     position: fixed
-    margin: 5px
-    height: 40px
-    right: 0
+    top: 7px
+    right: 0px
+    width: 243px
+    border-left: 1px solid #b6b7b7
 
     .action-container
       @include outer-container
+      margin-top: 3px
       
       .action-field
-        @include span-columns(6)
-        height: 40px
+        height: 30px
         background-repeat: no-repeat
         background-position: center center
+        position: relative
+        float: left
+
+      .active-holder 
+        position: absolute
+        top: -3px
+        right: -3px
+        font-size: 9px
+        color: #fff
+        background: #67a6da
+        width: 18px
+        height: 18px
+        line-height: 18px
+        text-align: center
+        -webkit-border-radius: 15px
+        -moz-border-radius: 15px
+        border-radius: 15px
+        font-family: proxima_nova_bold
 
       .messages
         @extend .action-field
         background-image: url(/assets/navbar/messages.svg)
+        position: relative
+        width: 40px
+        margin-left: 29px
 
+        .active
+          @extend .active-holder
+          background: #67a6da
+        
       .notifications
         @extend .action-field
         background-image: url(/assets/navbar/notifications.svg)
+        width: 24px
+        margin-left: 24px
+
+        .active
+          @extend .active-holder
+          background: #ae6730
 
       .deals
         @extend .action-field
         background-image: url(/assets/navbar/deals.svg)
+        width: 24px
+        margin-left: 18px
+
+        .active
+          @extend .active-holder
+          background: #f0c93c
 
       .settings
         @extend .action-field
         background-image: url(/assets/navbar/settings.svg)
+        width: 40px
+        margin-left: 15px
+        margin-top: 2px
 
-  .logo
-    width: 100%
 
   form
     @include span-columns(16)
@@ -105,3 +146,72 @@ $bg-color: #ffffff
     outline: none
     outline-color: transparent
     outline-sytle: none
+
+
+.chat-window
+  width: 241px
+  height: 100%
+  position: fixed
+  margin-top: 72px
+  background: red
+  top: 0px
+  right: -241px
+  z-index: 200
+  
+.active 
+  right: 0px
+
+.submenu
+  background: #4f5051
+  height: 25px
+  width: 100%
+  position: fixed
+  top: 50px
+  left: 0px
+  border-bottom: 3px solid #fff
+  z-index: 50
+  font-size: 14px
+  line-height: 22px
+  color: #fff
+  
+  .submenu-holder
+    width: 100%
+    position: relative
+    height: 22px
+  
+    .dropdown
+      width: 100px
+      height: 22px
+      border-right: 3px solid #fff
+      margin-left: 217px
+      float: left
+      padding-left: 30px
+  
+    .calendar
+      margin-left: 30px
+      margin-right: 244px
+      float: left
+    
+      a 
+        color: #929090
+        margin-right: 45px
+        font-size: 12px
+      
+      .active 
+        color: #fff
+        font-size: 14px
+      
+    .chat-status
+      position: absolute
+      top: 0px
+      right: 0px
+      width: 214px
+      height: 22px
+      border-left: 3px solid #fff
+      font-size: 10px
+      text-align: right
+      margin-right: 30px
+      line-height: 22px
+      color: #929090
+    
+    

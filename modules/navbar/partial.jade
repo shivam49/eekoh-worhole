@@ -1,21 +1,37 @@
+.chat-window
 .navbar
-  .brand-wrap
-    a.logo(href='/')
-      != svg('/assets/navbar/logo.svg')
+  a(href='/', class="brand-wrap")
   .search-wrap
     .form-wrap
       form(name='input', action='_self', method='get')
         input(type='text', name='search', placeholder='Discover ...')
         button(type='submit', class='btn-link')
           != svg('/assets/navbar/search.svg')
-      .spacer
-      .tree-wrap
-        a(href='/')
-          != svg('/assets/navbar/tree.svg')
-      .pipe
+  .tree
   .action-wrap
     .action-container
-      a(href='/', class="messages")
-      a(href='/', class="notifications")
-      a(href='/', class="deals")
-      a(href='/', class="settings")
+      .messages
+        .active 02
+      .notifications
+        .active 02
+      .deals
+        .active 02
+      .settings
+
+.submenu
+  .submenu-holder
+    .dropdown Menu
+    .calendar
+      a(href='/' class="active") 22 apr
+      a(href='/') 22 apr
+      a(href='/') 22 apr
+      a(href='/') 22 apr
+      a(href='/') 22 apr
+    .chat-status Chat
+
+script(src="//code.jquery.com/jquery-2.1.0.min.js")
+
+script(type='text/javascript').
+  $('.chat-status').click(function() {
+    $('.chat-window').toggleClass('active');
+  });
