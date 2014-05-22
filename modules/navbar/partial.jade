@@ -3,7 +3,7 @@
   .search-wrap
     .form-wrap
       form(name='input', action='_self', method='get')
-        input(type='text', name='search', placeholder='Discover ...')
+        input(type='text', name='search', placeholder='Discover ...' id="searchbar")
         button(type='submit', class='btn-link')
           != svg('/assets/navbar/search.svg')
   .tree
@@ -36,6 +36,62 @@
     .chat-status
        a(href='#') Chat
 
+// search results
+
+.search_results
+  .search-hdr Eekoh Page
+  .search-entries
+
+    .search-entry
+      .search-entry-img
+        a(href='/page')
+          img(src='https://positivecoach.org/common/cms/images/Lakers%20Logo%20%20Lot%204%203%20of%203.gif', width="50", height="40")
+      .search-entry-info
+        .search-entry-info-hdr
+          a(href='/page') LA Lakers eekoh page
+        .search-entry-info-rank 1 / 452
+      a(href='/page', class="search-entry-icon follow")
+      .clear
+
+    .search-entry
+      .search-entry-img
+        a(href='/page')
+          img(src='https://positivecoach.org/common/cms/images/Lakers%20Logo%20%20Lot%204%203%20of%203.gif', width="50", height="40")
+      .search-entry-info
+        .search-entry-info-hdr
+          a(href='/page') LA Lakers eekoh page
+        .search-entry-info-rank 1 / 452
+      a(href='/page', class="search-entry-icon follow")
+      .clear
+
+  .search-hdr People
+  .search-entries
+
+    .search-entry
+      .search-entry-img
+        a(href='/page')
+          img(src='https://positivecoach.org/common/cms/images/Lakers%20Logo%20%20Lot%204%203%20of%203.gif', width="50", height="40")
+      .search-entry-info
+        .search-entry-info-hdr
+          a(href='/page') LA Lakers eekoh page
+        .search-entry-info-rank 1 / 452
+      a(href='/page', class="search-entry-icon connect")
+      .clear
+
+    .search-entry
+      .search-entry-img
+        a(href='/page')
+          img(src='https://positivecoach.org/common/cms/images/Lakers%20Logo%20%20Lot%204%203%20of%203.gif', width="50", height="40")
+      .search-entry-info
+        .search-entry-info-hdr
+          a(href='/page') LA Lakers eekoh page
+        .search-entry-info-rank 1 / 452
+      a(href='/page', class="search-entry-icon add")
+      .clear
+
+  .search-seeall
+     a(href='#') See all
+
 script(src="//code.jquery.com/jquery-2.1.0.min.js")
 
 script(type='text/javascript').
@@ -57,4 +113,8 @@ script(type='text/javascript').
 
   $('.dropdown-menu').click(function() {
     $('.dropdown').fadeToggle('fast');
+  });
+
+  $('#searchbar').hover(function() {
+    $('.search_results').fadeToggle('fast');
   });

@@ -3,7 +3,10 @@
 
 $grid-columns: 24
 $max-width: auto
-$bg-color: #ffffff
+$bg-color: #fff
+$textcolor: #fff
+$smalltext: 10px
+$biggertext: 12px
 
 /* Navbar */
 .navbar
@@ -74,8 +77,8 @@ $bg-color: #ffffff
         position: absolute
         top: -3px
         right: -3px
-        font-size: 10px
-        color: #fff
+        font-size: $smalltext
+        color: $textcolor
         background: #67a6da
         width: 20px
         height: 20px
@@ -85,7 +88,7 @@ $bg-color: #ffffff
         -moz-border-radius: 15px
         border-radius: 15px
         font-family: proxima_nova_bold
-        border: 1px solid #fff
+        border: 1px solid $textcolor
 
       .messages
         @extend .action-field
@@ -164,11 +167,11 @@ $bg-color: #ffffff
   position: fixed
   top: 50px
   left: 0px
-  border-bottom: 3px solid #fff
+  border-bottom: 3px solid $textcolor
   z-index: 50
   font-size: 14px
   line-height: 22px
-  color: #fff
+  color: $textcolor
   
   .submenu-holder
     width: 100%
@@ -179,7 +182,7 @@ $bg-color: #ffffff
     .dropdown-menu
       width: 140px
       height: 22px
-      border-right: 3px solid #fff
+      border-right: 3px solid $textcolor
       margin-left: 214px
       float: left
       padding-left: 15px
@@ -209,8 +212,8 @@ $bg-color: #ffffff
       display: none
       
       a, a:link, a:visited, a:hover, a:active
-        color: #fff
-        font-size: 12px
+        color: $textcolor
+        font-size: $biggertext
         display: block
         margin-bottom: 3px
   
@@ -223,10 +226,10 @@ $bg-color: #ffffff
       a 
         color: #929090
         margin-right: 45px
-        font-size: 12px
+        font-size: $biggertext
       
       .active 
-        color: #fff
+        color: $textcolor
         font-size: 14px
       
     .chat-status
@@ -235,7 +238,7 @@ $bg-color: #ffffff
       right: 0px
       width: 244px
       height: 22px
-      border-left: 3px solid #fff
+      border-left: 3px solid $textcolor
       font-size: 11px
       line-height: 22px
       color: #929090
@@ -245,9 +248,114 @@ $bg-color: #ffffff
         background-size: 12px 12px
         background-repeat: no-repeat
         padding-left: 22px
-        color: #fff
+        color: $textcolor
         margin-left: 20px
       
     
     .chat-status:hover
       cursor: pointer
+
+.clear
+  clear: both
+
+.search_results
+  width: 700px
+  position: fixed
+  top: 43px
+  left: 214px
+  z-index: 100
+  background: url(/assets/navbar/search-bg.png)
+  display: none
+  
+  .search-hdr
+    background: #4f5051
+    height: 35px
+    width: 100%
+    font-size: $biggertext
+    color: $textcolor
+    text-align: center
+    line-height: 35px
+    font-family: proxima_nova_bold
+    font-weight: normal
+
+  .search-hdr:first-child
+    margin: 0px
+
+  .search-seeall
+    width: 100%
+    height: 20px
+    background: #000
+    color: $textcolor
+    text-align: center
+    font-size: $biggertext
+    line-height: 20px
+    
+    a, a:link, a:hover, a:active, a:visited
+      color: #fff
+    
+   
+  .search-entries
+    width: 100%
+    padding: 10px 0px
+    
+    .search-entry
+      padding: 2px 20px
+    
+      .search-entry-img
+        width: 52px
+        height: 42px
+        background: red
+        float: left
+        border: 1px solid #ccc
+        
+      .search-entry-info
+        float: left
+        max-height: 52px
+        font-size: $smalltext
+        margin-left: 25px
+              
+        .search-entry-info-hdr
+          font-size: $biggertext
+          color: $textcolor
+          line-height: 16px
+
+          a, a:link, a:hover, a:active, a:visited
+            color: #fff
+
+        .search-entry-info-rank
+          font-size: $smalltext
+          color: $textcolor
+          line-height: 12px
+          
+      .search-entry-icon
+        float: right
+        width: 50px
+        height: 40px
+        background-repeat: no-repeat
+        
+        &.follow
+          background: url(/assets/navbar/icon-follow.svg)
+          background-size: 19px 18px
+          background-repeat: no-repeat
+          background-position: center center
+          
+        &.connect
+          background: url(/assets/navbar/icon-connect.svg)
+          background-size: 47px 7px
+          background-repeat: no-repeat
+          background-position: center center
+        
+        &.add
+          background: url(/assets/navbar/icon-add.svg)
+          background-size: 23px 17px
+          background-repeat: no-repeat
+          background-position: center center
+    
+      
+    
+    
+    
+    
+    
+    
+    
