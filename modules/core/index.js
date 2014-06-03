@@ -1,6 +1,7 @@
 [
   'chatwindow',
   'navbar',
+  'profile',
   'notifications',
   'sidebar',
   'masonry'
