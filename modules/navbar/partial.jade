@@ -118,3 +118,17 @@ script(type='text/javascript').
   $('#searchbar').hover(function() {
     $('.search_results').fadeToggle('fast');
   });
+
+  var resize = function() {
+    var bodywidth = $('.profile-top').width();
+    var newwidth = bodywidth - 761;
+    console.log( "bodywidth", newwidth);
+    $("#profile-top-content").width(newwidth);
+    $("#profile-top-menu").width(newwidth);
+  };
+
+  $(document).ready(resize);
+  $(window).resize(resize);
+
+  
+  
