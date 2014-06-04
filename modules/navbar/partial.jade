@@ -122,9 +122,11 @@ script(type='text/javascript').
   var resize = function() {
     var bodywidth = $('.profile-top').width();
     var newwidth = bodywidth - 761;
+    var otherwidth = bodywidth - 455;
     console.log( "bodywidth", newwidth);
     $("#profile-top-content").width(newwidth);
     $("#profile-top-menu").width(newwidth);
+    $(".profile-content").width(otherwidth);
   };
 
   $(document).ready(resize);
