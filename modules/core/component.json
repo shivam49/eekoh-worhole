@@ -6,7 +6,9 @@
     "profile",
     "notifications",
     "sidebar",
-    "masonry"
+    "masonry",
+    "login"
+
   ],
   "main": "index.js",
   "styles": [

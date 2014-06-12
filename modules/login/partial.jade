@@ -1,0 +1,22 @@
+.showhidestuff
+  | TOGGLE 
+  a(href='#', class="show-profile") profile
+  a(href='#', class="show-login") login
+
+.home
+  .home-logo
+  .home-btn-holder
+     a(href='#', class="home-btn-join") Join
+     a(href='#', class="home-btn-login") Login     
+     
+
+script(type='text/javascript').
+  $('.show-profile').click(function() {
+    $('.profile-top').toggle();
+    $('.profile-content').toggle();
+  });
+
+  $('.show-login').click(function() {
+    $('.home').toggle();
+  });
+
