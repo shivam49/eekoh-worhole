@@ -4,7 +4,8 @@
   'profile',
   'notifications',
   'sidebar',
-  'masonry'
+  'masonry',
+  'login-register'
 ].forEach(function (module) {
   require(module);
 });
