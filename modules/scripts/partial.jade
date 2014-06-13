@@ -33,6 +33,14 @@ script(type='text/javascript').
     $('.home-overlay-login').slideToggle();
   });
 
+  $('#overlayclose').click(function() {
+    $('.overlay').fadeOut();
+  });
+
+  $('.edit-photo').click(function() {
+    $('.overlay').fadeIn();
+  });
+
   $('.home-overlay-service.email').click(function() {
     $('.home-overlay').fadeToggle();
     $('.home-overlay-register').slideToggle();
@@ -81,7 +89,7 @@ script(type='text/javascript').
     console.log( "bodywidth", newwidth);
     $("#profile-top-content").width(newwidth);
     $("#profile-top-menu").width(newwidth);
-    $(".article-page, .lumberyard-nav, .profile-content, .lumberyard, .notifications-nav").width(otherwidth);
+    $(".article-page, .lumberyard-nav, .profile-content, .lumberyard, .notifications-nav, .registration-nav, .registration-page").width(otherwidth);
   };
 
   $(document).ready(resize);

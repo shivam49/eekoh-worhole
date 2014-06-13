@@ -10,12 +10,11 @@
   z-index: 1000
   font-size: 12px
   line-height: 22px
-  display: none
   z-index: 1000
   
   a, a:visited, a:link, a:hover, a:active
     display: inline-block
-    width: 33%
+    width: 25%
     height: 22px
     color: #ccc
     border-left: 3px solid #fff
@@ -27,7 +26,7 @@
       font-size: 13px
 
 .registration-page
-  width: 680px
+  width: 780px
   height: 100%
   background: #fff
   margin-left: 214px
@@ -35,6 +34,158 @@
   position: absolute
   top: 0px
   left: 0px
-  display: none
   z-index: 1000
+  padding-left: 100px
+  padding-top: 60px
 
+  .label
+    font-size: 14px
+    font-weight: 600
+    color: #333
+    float: left
+    width: 165px
+    margin-bottom: 30px
+    font-size: 13px
+    
+  .input
+    float: left
+    width: 250px
+    margin-bottom: 20px
+    
+    input
+      padding: 5px
+      color: #333
+      font-size: 12px
+      
+  .checkbox
+    font-size: 9px
+    
+  .edit-photo
+    width: 136px
+    height: 125px
+    background: url(/assets/registration/icon-editphoto.png)
+    position: absolute
+    top: 60px
+    left: 550px
+
+  .edit-photo:hover
+    cursor: pointer
+    
+  .buttons 
+    position: absolute
+    left: 500px
+    top: 600px
+    font-size: 13px
+    
+    .save
+      width: 80px
+      height: 25px
+      background: #000
+      color: #fff
+      text-align: center
+      float: left 
+      margin-right: 20px  
+      
+    .cancel
+      width: 80px
+      height: 25px
+      background: #ccc
+      color: #fff
+      text-align: center
+      float: left    
+
+.overlay
+  width: 100%
+  height: 100%
+  background: #000
+  opacity: 0.90
+  position: fixed
+  top: 0px
+  left: 0px
+  z-index: 5000  
+  display: none 
+
+  .overlay-photo
+    width: 600px
+    height: 420px
+    position: absolute
+    z-index: 6000 
+    top: 50%
+    left: 50%
+    margin: -210px 0px 0px -300px
+    background: #fff
+    
+    .hdr
+      height: 30px
+      background: #ccc
+      color: #fff
+      line-height: 30px
+      font-weight: 600
+      padding-left: 10px
+      
+      a, a:link, a:visited, a:hover, a:active
+        display: inline-block
+        float: right
+        font-size: 15px
+        font-weight: 700
+        color: #fff
+        margin-right: 10px
+      
+    .holder
+      padding: 20px 30px
+      
+      .info 
+        font-size: 12px
+        line-height: 16px
+        
+        b 
+          font-size: 14px
+
+      .photos
+        margin-top: 20px
+      
+        .bigone
+          width: 255px
+          height: 225px
+          background: red
+          float: left
+          margin-left: 30px
+          margin-right: 40px
+          
+        .smallone
+          width: 188px
+          height: 170px
+          background: blue
+          float: left
+      
+    .divider
+      width: 600px
+      background: #ccc
+      height: 1px
+      margin-top: 20px
+ 
+    .buttons 
+      font-size: 13px
+      margin-top: 10px
+    
+      .save
+        width: 80px
+        height: 25px
+        background: #000
+        color: #fff
+        text-align: center
+        float: right 
+        margin-right: 20px
+        
+      .cancel
+        width: 80px
+        height: 25px
+        background: #ccc
+        color: #fff
+        text-align: center
+        float: right
+        margin-right: 20px    
+        
+      .save:hover, .cancel:hover
+        opacity: 0.8 
+        cursor: pointer

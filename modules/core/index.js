@@ -9,6 +9,7 @@
   'login',
   'lumberyard',
   'notificationspage',
+  'registration',
   'scripts'
 
 ].forEach(function (module) {
