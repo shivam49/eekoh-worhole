@@ -7,7 +7,10 @@
     "notifications",
     "sidebar",
     "masonry",
-    "login"
+    "articles",
+    "login",
+    "lumberyard",
+    "notificationspage"
 
   ],
   "main": "index.js",

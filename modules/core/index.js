@@ -5,7 +5,11 @@
   'notifications',
   'sidebar',
   'masonry',
-  'login-register'
+  'articles',
+  'login',
+  'lumberyard',
+  'notificationspage'
+
 ].forEach(function (module) {
   require(module);
 });

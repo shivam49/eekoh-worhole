@@ -2,6 +2,9 @@
   | TOGGLE 
   a(href='#', class="show-profile") profile
   a(href='#', class="show-login") login
+  a(href='#', class="show-articlepage") article page
+  a(href='#', class="show-lumberyard") lumberyard
+  a(href='#', class="show-notifications") notifications
 
 .home
   .home-logo
@@ -59,8 +62,22 @@ script(type='text/javascript').
     $('.profile-content').toggle();
   });
 
+  $('.show-lumberyard').click(function() {
+    $('.lumberyard-nav').toggle();
+    $('.lumberyard').toggle();
+  });
+
+  $('.show-notifications').click(function() {
+    $('.notifications-nav').toggle();
+    $('.notifications-page').toggle();
+  });
+
   $('.show-login').click(function() {
     $('.home').toggle();
+  });
+
+  $('.show-articlepage').click(function() {
+    $('.article-page, .article-page-sidebar').toggle();
   });
 
   $('.home-btn-join').click(function() {

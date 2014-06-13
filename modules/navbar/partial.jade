@@ -99,15 +99,15 @@ script(type='text/javascript').
     $('.chat-window').toggleClass('active');
   });
 
-  $('.action-container .messages').hover(function() {
+  $('.action-container .messages').click(function() {
     $('.notifications-messages-holder').fadeToggle('fast');
   });
 
-  $('.action-container .notifications').hover(function() {
+  $('.action-container .notifications').click(function() {
     $('.notifications-alerts-holder').fadeToggle('fast');
   });
 
-  $('.action-container .deals').hover(function() {
+  $('.action-container .deals').click(function() {
     $('.notifications-deals-holder').fadeToggle('fast');
   });
 
@@ -126,7 +126,7 @@ script(type='text/javascript').
     console.log( "bodywidth", newwidth);
     $("#profile-top-content").width(newwidth);
     $("#profile-top-menu").width(newwidth);
-    $(".profile-content").width(otherwidth);
+    $(".article-page, .lumberyard-nav, .profile-content, .lumberyard").width(otherwidth);
   };
 
   $(document).ready(resize);
