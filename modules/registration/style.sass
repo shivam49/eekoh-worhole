@@ -11,10 +11,11 @@
   font-size: 12px
   line-height: 22px
   z-index: 1000
+  width: 800px
   
   a, a:visited, a:link, a:hover, a:active
     display: inline-block
-    width: 25%
+    width: 250px
     height: 22px
     color: #ccc
     border-left: 3px solid #fff
@@ -26,7 +27,7 @@
       font-size: 13px
 
 .registration-page
-  width: 780px
+  width: 800px
   height: 100%
   background: #fff
   margin-left: 214px
@@ -37,6 +38,7 @@
   z-index: 1000
   padding-left: 100px
   padding-top: 60px
+  display: none
 
   .label
     font-size: 14px
@@ -190,9 +192,11 @@
     opacity: 0.8 
     cursor: pointer
 
-
+$grid-columns: 7
+$max-width: auto
+  
 .registration-page2
-  width: 780px
+  width: 800px
   height: 100%
   background: #fff
   margin-left: 214px
@@ -201,6 +205,68 @@
   top: 0px
   left: 0px
   z-index: 1000
-  padding-left: 100px
-  padding-top: 60px
+  padding-left: 40px
   display: none
+
+  .hdr
+    margin: 20px 0px
+  
+  .links
+    @include outer-container
+    margin-bottom: 20px
+    
+    div.type
+      @include span-columns(1)
+      background: red
+      width: span(1)
+      height: 80px
+      position: relative
+      margin: 0px 10px
+      
+      &.news
+        background: #050708
+
+      &.entertainment
+        background: #d65255
+
+      &.politics
+        background: #635ca3
+
+      &.sports
+        background: #6bc048
+
+      &.lifestyle
+        background: #e97f4b
+
+      &.edutech
+        background: #5680c1
+
+      &.business
+        background: #afadad
+        
+      .name
+        position: absolute
+        bottom: 0px
+        height: 20px
+        width: 100%
+        left: 0px
+        background: #000
+        opacity: 0.8 
+        color: #fff
+        text-align: center
+        line-height: 20px
+        font-size: 13px
+      
+      .number
+        font-size: 40px
+        font-weight: 700
+        font-style: normal
+        position: absolute
+        top: 0px
+        height: 60px
+        left: 0px
+        line-height: 60px
+        text-align: center
+        width: 100%
+        opacity: 0.5
+        
