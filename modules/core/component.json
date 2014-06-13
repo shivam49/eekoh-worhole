@@ -10,7 +10,8 @@
     "articles",
     "login",
     "lumberyard",
-    "notificationspage"
+    "notificationspage",
+    "scripts"
 
   ],
   "main": "index.js",

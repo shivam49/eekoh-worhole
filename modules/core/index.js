@@ -8,7 +8,8 @@
   'articles',
   'login',
   'lumberyard',
-  'notificationspage'
+  'notificationspage',
+  'scripts'
 
 ].forEach(function (module) {
   require(module);
