@@ -25,15 +25,24 @@ script(type='text/javascript').
     $('.article-page, .article-page-sidebar').toggle();
   });
 
-  $('.registration-page.save').click(function() {
-    $('.registration-page, .registration-page2').toggle();
-    $('#reg01, #reg02').toggleClass('active')
+  $('.show-registration').click(function() {
+    $('.registration-page').toggle();
+    $('.registration-nav').toggle();
+    $('#reg01').toggleClass('active')
   });
 
-  $('.registration-page.save2').click(function() {
-    $('.registration-page2, .registration-page3').toggle();
-    $('#reg02, #reg03').toggleClass('active')
+  $('.show-registration2').click(function() {
+    $('.registration-page2').toggle();
+    $('.registration-nav').toggle();
+    $('#reg02').toggleClass('active')
   });
+
+  $('.show-registration3').click(function() {
+    $('.registration-page3').toggle();
+    $('.registration-nav').toggle();
+    $('#reg03').toggleClass('active')
+  });
+
 
   $('.home-btn-join').click(function() {
     $('.home-overlay').slideToggle();
@@ -99,7 +108,7 @@ script(type='text/javascript').
     console.log( "bodywidth", newwidth);
     $("#profile-top-content").width(newwidth);
     $("#profile-top-menu").width(newwidth);
-    $(".article-page, .lumberyard-nav, .profile-content, .lumberyard, .notifications-nav").width(otherwidth);
+    $(".article-page, .lumberyard-nav, .profile-content, .lumberyard, .notifications-nav, .registration-page, .registration-page2, .registration-page3").width(otherwidth);
   };
 
   $(document).ready(resize);

@@ -18,8 +18,11 @@
     width: 250px
     height: 22px
     color: #ccc
-    border-left: 3px solid #fff
     text-align: center
+    background: url('/assets/registration/icon-divider.png')
+    background-size: 23px 44px
+    background-position: right center
+    background-repeat: no-repeat
     
     &.active 
       color: #fff
@@ -192,9 +195,18 @@
     opacity: 0.8 
     cursor: pointer
 
-$grid-columns: 7
-$max-width: auto
-  
+  .skip
+    width: 80px
+    height: 25px
+    background: #fff
+    color: #333
+    text-align: center
+    float: right
+    margin-right: 20px    
+
+.padding
+  padding-left: 40px
+
 .registration-page2
   width: 800px
   height: 100%
@@ -205,24 +217,22 @@ $max-width: auto
   top: 0px
   left: 0px
   z-index: 1000
-  padding-left: 40px
   display: none
 
   .hdr
     margin: 20px 0px
   
   .links
-    @include outer-container
     margin-bottom: 20px
     
-    div.type
-      @include span-columns(1)
-      background: red
+    .type
+      width: 115px
       width: span(1)
-      height: 80px
+      height: 90px
       position: relative
-      margin: 0px 10px
-      
+      margin-right: 10px
+      float: left
+
       &.news
         background: #050708
 
@@ -244,29 +254,129 @@ $max-width: auto
       &.business
         background: #afadad
         
+      .icon-add
+        position: absolute
+        top: 3px
+        right: 3px
+        background: url(/assets/registration/icon-plus.png)
+        background-repeat: no-repeat
+        background-size: 11px
+        width: 11px
+        height: 11px
+
       .name
         position: absolute
         bottom: 0px
         height: 20px
         width: 100%
         left: 0px
-        background: #000
-        opacity: 0.8 
         color: #fff
         text-align: center
         line-height: 20px
         font-size: 13px
+
+        &.entertainment
+          background: #9f3d3f
+          
+        &.politics
+          background: #494377
       
+        &.sports
+          background: #508e35
+      
+        &.lifestyle
+          background: #ad5e38
+      
+        &.edutech
+          background: #4a5f8c
+      
+        &.business
+          background: #828081
+
       .number
-        font-size: 40px
+        font-size: 35px
         font-weight: 700
         font-style: normal
         position: absolute
         top: 0px
-        height: 60px
+        height: 70px
         left: 0px
-        line-height: 60px
+        line-height: 70px
         text-align: center
         width: 100%
-        opacity: 0.5
-        
+        opacity: 0.4
+        color: #333
+
+    .type:hover
+      cursor: pointer
+
+.registration-page3
+  width: 800px
+  height: 100%
+  background: #fff
+  margin-left: 214px
+  margin-top: 75px
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 1000
+
+  .hdr
+    margin: 20px 0px
+    
+  .connections
+    width: 725px
+    
+    .connection
+      padding: 20px
+      border-bottom: 2px solid #ccc
+      height: 90px
+      font-size: 13px
+
+    .logo
+      width: 63px
+      height: 50px
+      border: 1px solid #ccc
+      float: left
+      margin-right: 25px
+      background-repeat: no-repeat
+      
+      &.facebook
+        background: url(/assets/registration/icon-facebook.png)
+        background-size: 63px 50px
+
+      &.google
+        background: url(/assets/registration/icon-google.png)
+        background-size: 63px 50px
+
+      &.twitter
+        background: url(/assets/registration/icon-twitter.png)
+        background-size: 63px 50px
+
+      &.pinterest
+        background: url(/assets/registration/icon-pinterest.png)
+        background-size: 63px 50px
+
+      &.instagram
+        background: url(/assets/registration/icon-instagram.png)
+        background-size: 63px 50px
+
+      &.linkedin
+        background: url(/assets/registration/icon-linkedin.png)
+        background-size: 63px 50px
+
+
+      
+    .name
+      float: left
+      height: 50px
+      line-height: 50px
+      
+    .link
+      float: right
+      height: 50px
+      line-height: 50px
+      
+      a, a:link a:visited, a:hover a:active
+        color: #000
+        font-weight: 600
