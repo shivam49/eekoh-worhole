@@ -43,6 +43,15 @@ script(type='text/javascript').
     $('#reg03').toggleClass('active')
   });
 
+  $('.show-logintop').click(function() {
+    $('.logintop').toggle();
+    $('.welcome').toggle();
+  });
+
+  $('.show-login-overlay').click(function() {
+    $('.top-login-overlay').slideToggle();
+  });
+
 
   $('.home-btn-join').click(function() {
     $('.home-overlay').slideToggle();
