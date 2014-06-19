@@ -2,9 +2,19 @@ script(src="//code.jquery.com/jquery-2.1.0.min.js")
 
 script(type='text/javascript').
 
-  $('.show-profile').click(function() {
+  $('.show-profile-eekoh').click(function() {
     $('.profile-top').toggle();
-    $('.profile-content').toggle();
+    $('.profile-content-eekoh').toggle();
+  });
+
+  $('.show-profile-connections').click(function() {
+    $('.profile-top').toggle();
+    $('.profile-content-connections').toggle();
+  });
+
+  $('.show-profile-edituser').click(function() {
+    $('.profile-top').toggle();
+    $('.profile-content-edituser').toggle();
   });
 
   $('.show-lumberyard').click(function() {
@@ -125,7 +135,7 @@ script(type='text/javascript').
     $("#profile-top-content").width(newwidth);
     $("#profile-top-menu").width(newwidth);
     $(".inbox .current, .inbox-nav, .chatbox, .chatbox-btns").width(currentwidth);
-    $(".article-page, .lumberyard-nav, .profile-content, .lumberyard, .notifications-nav, .registration-page, .registration-page2, .registration-page3, .inbox").width(otherwidth);
+    $(".article-page, .lumberyard-nav, .profile-content-eekoh, .profile-content-connections, .lumberyard, .notifications-nav, .registration-page, .registration-page2, .registration-page3, .inbox").width(otherwidth);
   };
 
   $(document).ready(resize);

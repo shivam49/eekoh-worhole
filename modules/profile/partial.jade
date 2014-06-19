@@ -59,7 +59,7 @@
       a(href='/', class="connect") + Connect
   .clear
   
-.profile-content
+.profile-content-eekoh
   .profile-content-padding
     .menu Welcome to Randi's eekoh system:
       a(href="#", class="active") eekoh all (99)
@@ -107,5 +107,111 @@
           .number 8
           .name.business Business
       .clear
+
+
+
+.profile-content-connections
+  .profile-content-padding
+    .menu All connections
+      a(href="#", class="active") All (99)
+      a(href="#") Mutual Connections (99)
+      a(href="#") Similar Interests (99)
+    .links
+      .connections
+        .connection
+          .photo
+            img(src="http://1.bp.blogspot.com/-eh7B7qlNR6U/ULc8ofWeg7I/AAAAAAAAXyg/Bj195OomDLw/s640/cute_cat_bath_07.jpg")
+          .info
+            | <b>Jonathan Buckridge</b> | Sequoia Stage<br>
+            | Sherman Oaks, CA<br>
+            | 3,921 connections
+          .btn-connect Connected
+          .clear
+        .connection
+          .photo
+            img(src="http://1.bp.blogspot.com/-eh7B7qlNR6U/ULc8ofWeg7I/AAAAAAAAXyg/Bj195OomDLw/s640/cute_cat_bath_07.jpg")
+          .info
+            | <b>Jonathan Buckridge</b> | Sequoia Stage<br>
+            | Sherman Oaks, CA<br>
+            | 3,921 connections
+          .btn-connect Connected
+          .clear
+        .connection
+          .photo
+            img(src="http://1.bp.blogspot.com/-eh7B7qlNR6U/ULc8ofWeg7I/AAAAAAAAXyg/Bj195OomDLw/s640/cute_cat_bath_07.jpg")
+          .info
+            | <b>Jonathan Buckridge</b> | Sequoia Stage<br>
+            | Sherman Oaks, CA<br>
+            | 3,921 connections
+          .btn-connect.connect + Connect
+          .clear
+        .connection
+          .photo
+            img(src="http://1.bp.blogspot.com/-eh7B7qlNR6U/ULc8ofWeg7I/AAAAAAAAXyg/Bj195OomDLw/s640/cute_cat_bath_07.jpg")
+          .info
+            | <b>Jonathan Buckridge</b> | Sequoia Stage<br>
+            | Sherman Oaks, CA<br>
+            | 3,921 connections
+          .btn-connect Connected
+          .clear
+        .connection
+          .photo
+            img(src="http://1.bp.blogspot.com/-eh7B7qlNR6U/ULc8ofWeg7I/AAAAAAAAXyg/Bj195OomDLw/s640/cute_cat_bath_07.jpg")
+          .info
+            | <b>Jonathan Buckridge</b> | Sequoia Stage<br>
+            | Sherman Oaks, CA<br>
+            | 3,921 connections
+          .btn-connect Connected
+          .clear
     
-    
+.profile-content-edituser.show
+  .profile-content-padding.noborder
+    .registration-page
+      .label First Name*:
+      .input
+        input(type="text", id="firstname")
+      .clear
+      .label Last Name*:
+      .input
+        input(type="text", id="lastname")
+      .clear
+      .label Screen Name:
+      .input.checkbox
+        input(type="text", id="screenname")
+        input(type="checkbox", name="use-fullname", class="checkbox")
+        | Use full name
+        input(type="checkbox", name="use-screenname", class="checkbox")
+        | Use screen name
+       .clear
+      .label E-mail:
+      .input
+        input(type="text", id="email")
+      .clear
+      .label Gender:
+      .input
+        input(type="text", id="gender")
+      .clear
+      .label Date of birth*:
+      .input
+        input(type="text", id="dob")
+      .clear
+      .label Education:
+      .input
+        input(type="text", id="education")
+      .clear
+      .label Work:
+      .input
+        input(type="text", id="work")
+      .clear
+      .label Position:
+      .input
+        input(type="text", id="position")
+      .clear
+      .edit-photo
+      .buttons
+        .save Save
+        .cancel Cancel
+        .clear
+
+
+
